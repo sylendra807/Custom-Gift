@@ -14,6 +14,7 @@ const Home = () => {
   useEffect(() => {
     if (item) {
       dispatch(setUser(item));
+      console.log(item);
     }
   }, [item, dispatch]);
 

@@ -13,10 +13,28 @@ const Landing = () => {
     });
 
     const handleDateChange = (e) => {
-        setDd({
-            ...dd,
-            date: e.target.value
-        });
+        const selectedDate = new Date(e.target.value);
+        const currentDate = new Date();
+        
+        // Remove time part of currentDate to only compare dates
+        currentDate.setHours(0, 0, 0, 0);
+
+        if (selectedDate < currentDate) {
+            alert("Please select a future date for delivery.");
+        } else {
+            setDd({
+                ...dd,
+                date: e.target.value
+            });
+        }
+    };
+
+    const handleBuyNow = () => {
+        if (dd.date === "") {
+            alert("Please select a delivery date.");
+        } else {
+            nav('/a', { state: dd });
+        }
     };
 
     return (
@@ -51,7 +69,7 @@ const Landing = () => {
                     <div className="desc-container">
                         <p>{item.description}</p>
                     </div>
-                    <button className="order" type='submit' onClick={() => { nav('/a', { state: dd }) }}>Buy Now</button>
+                    <button className="order" type='submit' onClick={handleBuyNow}>Buy Now</button>
                 </div>
             </div>
         </div>

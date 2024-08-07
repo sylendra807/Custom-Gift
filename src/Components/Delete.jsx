@@ -49,6 +49,8 @@ const Delete = () => {
     { id: 'id', label: 'Sno', minWidth: 50, align: 'left' },
     { id: 'name', label: 'Name', minWidth: 100, align: 'left' },
     { id: 'price', label: 'Price', minWidth: 100, align: 'left' },
+    { id: 'image', label: 'image', minWidth: 100, align: 'left' },
+    { id: 'description', label: 'description', minWidth: 100, align: 'left' },
     { id: 'delete', label: 'Delete', minWidth: 100, align: 'left' },
     { id: 'update', label: 'Update', minWidth: 100, align: 'left' },
   ];
@@ -102,7 +104,17 @@ const Delete = () => {
                           </Button>
                         </TableCell>
                       );
-                    } else {
+                    }
+                    else if (column.id==='image')
+                      {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          <img src={row.image} alt="" height={50} width={70}/>
+                        </TableCell>
+                      );
+                      
+                    }
+                     else {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           {value}

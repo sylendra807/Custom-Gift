@@ -15,7 +15,7 @@ const NN= () => {
       <div className='right'>
         <button className='li' onClick={()=>{nav('/add')}}>add items</button>
         <button className='li'onClick={()=>{nav('/del')}}>delete items</button>
-        <button className='li' onClick={()=>{nav('')}}>order details</button>
+        <button className='li' onClick={()=>{nav('/order')}}>order details</button>
       </div>
       <div className="cart">
         

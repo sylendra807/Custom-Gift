@@ -1,9 +1,12 @@
 import React from 'react';
 import '../Asserts/css/About.css';
+import Navbar from './Navbar';
 
 const AboutUs = () => {
 return (
-    <div className="about-us-container">
+  <>
+      <Navbar/>
+  <div className="about-us-container">
       <div className="header">
         <h1>Welcome to Giftify - Your Ultimate Destination for Personalized Gifts!</h1>
       </div>
@@ -56,6 +59,7 @@ return (
         </section>
       </div>
     </div>
+  </>
   );
 };
 

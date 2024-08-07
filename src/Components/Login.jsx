@@ -117,6 +117,8 @@ const Login = () => {
             <input type='password' name='password' onChange={handleInputChange} />
             {error.password && <p className='error'>{error.password}</p>}
             <button onClick={validate}>Signup</button>
+           <p>Admin login</p> <button className='li' style={{fontSize:'15px',backgroundColor:'white'}} onClick={()=>navigate('/al')}>admin login
+        </button>
             <p>Existing user? <a onClick={handleToggle}>Login</a></p>
           </>
         ) : (

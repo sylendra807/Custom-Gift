@@ -43,9 +43,10 @@ const Add = () => {
     };
 
     return (
+        <>
+                <NN />
         <div className="nn">
             <div className='add'>
-                <NN />
                 <form className="sub" onSubmit={handleSubmit}>
                     <div className="page">
                         <label>Product name:</label>
@@ -55,7 +56,7 @@ const Add = () => {
                             value={obj.name} 
                             onChange={handleChange} 
                             className='inp'
-                        />
+                            />
                         <label>Product Image URL:</label>
                         <input 
                             type="text" 
@@ -63,7 +64,7 @@ const Add = () => {
                             value={obj.image} 
                             onChange={handleChange} 
                             className='inp'
-                        />
+                            />
                         <label>Product Price:</label>
                         <input 
                             type="text" 
@@ -71,7 +72,7 @@ const Add = () => {
                             value={obj.price} 
                             onChange={handleChange} 
                             className='inp'
-                        />
+                            />
                         <label>Product Category:</label>
                         <input 
                             type="text" 
@@ -79,18 +80,19 @@ const Add = () => {
                             value={obj.category} 
                             onChange={handleChange} 
                             className='inp'
-                        />
+                            />
                         <label>Product Description:</label>
                         <textarea 
                             name="description" 
                             value={obj.description} 
                             onChange={handleChange} 
-                        />
+                            />
                         <button type="submit" style={{ marginLeft: "170px" }}>Add Product</button>
                     </div>
                 </form>
             </div>
         </div>
+                            </>
     );
 };
 

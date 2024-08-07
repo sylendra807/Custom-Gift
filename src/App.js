@@ -15,6 +15,7 @@ import Delete from './Components/Delete.jsx';
 import About from './Components/About.jsx' ;
 import Contact from './Components/Contact.jsx' ;
 import Order from './Components/Order.jsx';
+import Cart from './Components/Cart.jsx';
 function App() {
   return (
     <div className="App">
@@ -34,6 +35,7 @@ function App() {
       <Route  element={<About/>} path='/about'/>
       <Route  element={<Contact/>} path='/contact'/>
       <Route  element={<Order/>} path='/order'/>
+      <Route  element={<Cart/>} path='/cart'/>
     </Routes>
     </BrowserRouter>
     </div>

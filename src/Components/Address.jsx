@@ -30,11 +30,11 @@ const Address = () => {
       <div className='Log1'>
         <h1>Address</h1>
         <label>Door No & Street Name</label>
-        <input type='text' className="inp" onChange={handleInputChange} />
+        <input type='text' className="inp1" onChange={handleInputChange} />
         <label>City</label>
-        <input type='text' className="inp" onChange={handleInputChange} />
+        <input type='text' className="inp1" onChange={handleInputChange} />
         <label>State</label>
-        <input type="text" className="inp" onChange={handleInputChange} />
+        <input type="text" className="inp1" onChange={handleInputChange} />
         <button onClick={handleSubmit}>Next</button>
       </div>
     </div>

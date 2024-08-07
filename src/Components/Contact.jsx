@@ -1,6 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import '../Asserts/css/Contact.css';
+import Navbar from './Navbar';
 const Contact = () => {
   
     const onSubmit = async (event) => {
@@ -30,7 +31,8 @@ const Contact = () => {
         }
       };  
     return (
-    
+    <>
+    <Navbar/>
     <section className="contact">
         <form onSubmit={onSubmit}>
             <h2>Contact Form</h2>
@@ -49,6 +51,7 @@ const Contact = () => {
             <button type="submit">Send Message</button>
         </form>
     </section>
+    </>
   )
 }
 

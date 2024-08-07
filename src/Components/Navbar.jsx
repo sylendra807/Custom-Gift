@@ -6,7 +6,7 @@ import logo from '../Asserts/images/1000_F_190648606_xOWhBCspt5R3W0oVj258W88ZLUB
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
-  const nav=useNavigate()
+  const nav=useNavigate();
   return (
     <div className='bar'>
       <div className='left'>
@@ -14,14 +14,12 @@ const Navbar = () => {
         <p>CUSTO-GIFT</p>
       </div>
       <div className='right'>
-        <button className='li'>Home</button>
+        <button className='li' onClick={()=>{nav('/home')}}>Home</button>
         <button className='li'onClick={()=>{nav('/about')}}>About</button>
         <button className='li' onClick={()=>{nav('/contact')}}>Contact</button>
       </div>
       <div className="cart">
-        <button className='li' style={{fontSize:'15px'}} onClick={()=>nav('/al')}>admin login
-        </button>
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <FontAwesomeIcon icon={faShoppingCart} onClick={()=>nav('/cart')}/>
       </div>
      
     </div>
