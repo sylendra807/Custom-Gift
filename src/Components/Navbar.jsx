@@ -15,7 +15,7 @@ const Navbar = () => {
       </div>
       <div className='right'>
         <button className='li'>Home</button>
-        <button className='li'onClick={()=>{nav('/ab')}}>About</button>
+        <button className='li'onClick={()=>{nav('/about')}}>About</button>
         <button className='li' onClick={()=>{nav('/contact')}}>Contact</button>
       </div>
       <div className="cart">

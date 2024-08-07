@@ -13,8 +13,8 @@ const NN= () => {
         <p>CUSTO-GIFT</p>
       </div>
       <div className='right'>
-        <button className='li' onClick={()=>{nav('/pro')}}>add items</button>
-        <button className='li'onClick={()=>{nav('/pi')}}>delete items</button>
+        <button className='li' onClick={()=>{nav('/add')}}>add items</button>
+        <button className='li'onClick={()=>{nav('/del')}}>delete items</button>
         <button className='li' onClick={()=>{nav('')}}>order details</button>
       </div>
       <div className="cart">

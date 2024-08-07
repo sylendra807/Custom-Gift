@@ -7,10 +7,11 @@
     align-items: center;
 }
 .page{
- 
+    width:700px;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
+    margin-bottom: 300px;
 }
 .inp{
     display: flex;
@@ -19,4 +20,9 @@
     border: 1px solid black;
     border-radius: 0;
     width: 400px;
+    margin-left: 90px;
+}
+.sub{
+    
+    width: 100%;
 }

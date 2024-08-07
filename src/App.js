@@ -11,6 +11,10 @@ import Confirmation from './Components/Confirmation.jsx';
 import Adminlogin from './Components/Adminlogin.jsx'
 import AdminHome from './Components/AdminHome.jsx';
 import Add from './Components/Add.jsx';
+import Delete from './Components/Delete.jsx';
+import About from './Components/About.jsx' ;
+import Contact from './Components/Contact.jsx' ;
+import Order from './Components/Order.jsx';
 function App() {
   return (
     <div className="App">
@@ -26,6 +30,10 @@ function App() {
       <Route  element={<Adminlogin/>} path='/al'/>
       <Route  element={<AdminHome/>} path='/ah'/>
       <Route  element={<Add/>} path='/add'/>
+      <Route  element={<Delete/>} path='/del'/>
+      <Route  element={<About/>} path='/about'/>
+      <Route  element={<Contact/>} path='/contact'/>
+      <Route  element={<Order/>} path='/order'/>
     </Routes>
     </BrowserRouter>
     </div>
