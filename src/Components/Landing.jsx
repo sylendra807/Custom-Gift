@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../Asserts/css/Landing.css';
 
@@ -11,7 +11,9 @@ const Landing = () => {
         name: item.name,
         price: item.price
     });
+    const imageUrl = item.url || item.image;
 
+   
     const handleDateChange = (e) => {
         const selectedDate = new Date(e.target.value);
         const currentDate = new Date();
@@ -41,7 +43,7 @@ const Landing = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-6 one" id='one'>
-                    <img className="ind" src={item.url} alt="" />
+                    <img className="ind" src={imageUrl} alt="" />
                 </div>
                 <div className="col-6 two" id='two'>
                     <div className="input-container">

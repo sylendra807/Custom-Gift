@@ -9,7 +9,7 @@ const Navbar = () => {
   const nav=useNavigate();
   return (
     <div className='bar'>
-      <div className='left'>
+      <div className='left' onClick={()=>{nav('/profile')}}>
         <img src={logo} alt=""width='100vw' height='70px' style={{borderRadius:"40px"}}/>
         <p>CUSTO-GIFT</p>
       </div>

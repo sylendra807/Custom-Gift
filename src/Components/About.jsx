@@ -1,9 +1,22 @@
 import React from 'react';
 import '../Asserts/css/About.css';
 import Navbar from './Navbar';
-
+import { useState ,useEffect} from 'react';
+import Newloader from './Newloader';
 const AboutUs = () => {
-return (
+  const [loading,setLoad]=useState(true);
+  useEffect(()=>{
+
+    const timer=setTimeout(()=>{
+      setLoad(false);
+    },3000);
+    return ()=>clearTimeout(timer);
+  },[])
+return (loading?
+  (<>
+   <Newloader/>
+  </>):
+    (
   <>
       <Navbar/>
   <div className="about-us-container">
@@ -60,6 +73,7 @@ return (
       </div>
     </div>
   </>
+  )
   );
 };
 

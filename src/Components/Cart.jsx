@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import { TableContainer } from '@mui/material';
+import { Table } from '@mui/material';
+import { TableHead } from '@mui/material';
+import { TableRow } from '@mui/material';
+import { TableCell } from '@mui/material';
+import { TableBody } from '@mui/material';
 import axios from "axios";
 import Button from '@mui/material/Button';
 import Navbar from "./Navbar";
-import { useLocation } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import Newloader from "./Newloader";
 const Cart = () => {
+  const [loading,setLoad]=useState(true);
+  useEffect(()=>{
+
+    const timer=setTimeout(()=>{
+      setLoad(false);
+    },3000);
+    return ()=>clearTimeout(timer);
+  },[])
   const [rows, setRows] = useState([]);
-  const [n, setN] = useState("");
-  const location = useLocation();
   const user = useSelector((state) => state.user);
+
   useEffect(() => {
     const fetch = async () => {
-      if (user) {
-        setN(user);
+      if (user && user.name) {
         try {
           const res = await axios.get(`http://localhost:8080/order/${user.name}`);
           setRows(res.data);
@@ -30,7 +36,7 @@ const Cart = () => {
       }
     };
     fetch();
-  }, []);
+  }, [user]);
 
   const handleDelete = async (row) => {
     const id = row.id;
@@ -40,9 +46,8 @@ const Cart = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:8080/api/products/${id}`);
-      setRows(rows.filter((row) => row.id !== id)); // Changed from row.sno to row.id
-      window.location.reload();
+      await axios.delete(`http://localhost:8080/order/${id}`);
+      setRows(rows.filter((row) => row.id !== id));
     } catch (error) {
       console.error("There was an error deleting the product!", error);
     }
@@ -54,9 +59,12 @@ const Cart = () => {
     { id: 'price', label: 'Price', minWidth: 100, align: 'left' },
     { id: 'date', label: 'Delivery Date', minWidth: 100, align: 'left' },
     { id: 'address', label: 'Delivery Address', minWidth: 100, align: 'left' },
+    { id: 'delete', label: 'Delete', minWidth: 50, align: 'left' },
   ];
 
-  return (
+  return (   loading?
+    (<><Newloader/></>):
+    (
     <div className="del">
       <Navbar />
       <Paper>
@@ -108,7 +116,7 @@ const Cart = () => {
           </Table>
         </TableContainer>
       </Paper>
-    </div>
+    </div>)
   );
 };
 
